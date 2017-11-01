@@ -46,8 +46,8 @@ fi
 # Instal python dependencies
 # This is platform-independent
 
-easy_install pip
-pip install flask gunicorn PyMySQL
+easy_install -i http://pypi.douban.com/simple pip
+pip install -i http://pypi.douban.com/simple --trusted-host pypi.douban.com flask gunicorn PyMySQL
 
 
 # If the app hasn't been deployed yet, create the path, and deploy the app
@@ -62,7 +62,7 @@ else
   git fetch
 fi
 
-git checkout -B "${APP_BRANCH}" "origin/${APP_BRANCH}"
+#git checkout -B "${APP_BRANCH}" "origin/${APP_BRANCH}"
 
 
 # Reload the app if it's running, otherwise launch it.
